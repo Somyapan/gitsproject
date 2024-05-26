@@ -58,7 +58,7 @@ const Counter = ({value}) => {
 
   return (
     <div ref={counterRef}>
-      {isVisible && <h1 className='text-yellow-400 text-6xl font-bold mb-4'  >{count}</h1>}
+      {isVisible && <h1 className='text-yellow-400 sm:text-6xl text-4xl font-bold mb-4'  >{count}</h1>}
     </div>
   );
 };
