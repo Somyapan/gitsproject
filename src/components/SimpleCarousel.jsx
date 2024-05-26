@@ -1,17 +1,14 @@
-import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+
 import image1 from "/clg_b.jpg";
 import image2 from "/gits_nba.jpeg";
 import image3 from "/Slide_Corporate.jpeg";
-import image4 from "/Slide_Placement.jpeg";
-import image5 from "/slide5.jpg";
-import image6 from "/slide14.jpg";
-import image7 from "/m_banner.jpeg";
-
-
-
+// import image4 from "/Slide_Placement.jpeg";
+// import image5 from "/slide5.jpg";
+// import image6 from "/slide14.jpg";
+// import image7 from "/m_banner.jpeg";
 
 const NextArrow = ({ onClick }) => {
   return (
@@ -46,25 +43,27 @@ const SimpleCarousel = () => {
     autoplaySpeed: 2000,
     pauseOnHover: true,
     nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />
+    prevArrow: <PrevArrow />,
   };
 
   const images = [image1, image2, image3];
 
   return (
-    <div className="relative">
-      <Slider {...settings}>
-        {images.map((src, index) => (
-          <div key={index}>
-            <img src={src} alt={`Slide ${index + 1}`} className="w-full  sm:h-[40rem]  h-72" />
-          </div>
-        ))}
-      </Slider>
+    <div className=" w-full sm:max-h-full sm:max-w-full">
+      <div className="relative">
+        <Slider {...settings}>
+          {images.map((src, index) => (
+            <div key={index}>
+              <img
+                src={src}
+                alt={`Slide ${index + 1}`}
+                className="w-full  sm:h-[40rem]  h-72"
+              />
+            </div>
+          ))}
+        </Slider>
+      </div>
     </div>
   );
 };
 export default SimpleCarousel;
-
-
-
-
